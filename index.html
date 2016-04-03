@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <title>Lab 10 - Space War</title>
+        <style>
+            body{
+                background:#334477;
+                color:white;
+                font: 14px 'Arial' sans-serif;
+            }
+
+            .mainContent{
+                width:900px;
+                margin:0px auto;
+            }
+
+            .gameContent{
+                background:white;
+                border-radius:10px;
+                padding:40px;
+                text-align:center;
+            }
+
+            #gameCanvas{
+                border:1px solid #333;
+            }
+
+        </style>
+         
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:IsMyDocuments msdt:dt="string">1</mso:IsMyDocuments>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body>
+        <div class="mainContent">
+            <h3>
+                Space War
+            </h3>
+            <div class="gameContent">
+                <canvas id="gameCanvas" width="800" height="500">
+
+                </canvas>
+            </div>
+        </div>
+        
+        <script src="js/vector.js"></script>
+		<script src="js/spacewarGame.js"></script>
+        <script src="js/projectile.js"></script>
+        <script src="js/ship.js"></script>
+        <script src="js/gravityWell.js"></script>
+        <script>
+            window.onload = init;
+
+            function init() {
+                
+				var canvas = document.getElementById('gameCanvas');
+				
+				
+				var game = new SpacewarGame(canvas);
+				setInterval(game.update,1000/60);
+				window.addEventListener('keyup', game.handelKeyUp);
+				window.addEventListener('keydown', game.handelKeyDown);
+
+            }
+
+        </script>
+    </body>
+</html>
