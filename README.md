@@ -1,8 +1,7 @@
 # Space_ware
 Developed with HTML 5 Canavas animation using javascript.
 
-# Preview
-https://dushyantdevtips.github.io/Space_ware/
+
 
 ---
 ## Code Sandbox Demo ##
